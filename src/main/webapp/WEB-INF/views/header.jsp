@@ -12,6 +12,9 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600'
         rel='stylesheet' type='text/css'>
     </head>
+    
+    <!-- chaged code for a feature  -->
+    
     <body class="btn-rounded scroll-assist">
         <div class="nav-container">
             <nav class="bg-dark absolute transparent">
@@ -30,10 +33,13 @@
                         <div class="module left">
                             <ul class="menu">
                                 <li>
-                                    <a href="/">My Home1</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li>
                                     <a href="/about">About</a>
+                                </li>
+                                <li>
+                                    <a href="/careers">Careers</a>
                                 </li>
                                 <li>
                                     <a href="#">

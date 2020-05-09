@@ -9,6 +9,13 @@ pipeline {
             steps {
                 snDevOpsStep()
                 snDevOpsPackage(name: "package", artifactsPayload: """{"artifacts": [{"name": "globex-web.war", "repositoryName": "Repo1", "version": "${artifactVersion}"}]}""")
+                sh 'mvn compile'
+                sh 'mvn verify'
+            }
+            post {
+                success {
+                    junit '**/target/surefire-reports/*.xml' 
+                }            
             }
         }
         stage('Prod') {

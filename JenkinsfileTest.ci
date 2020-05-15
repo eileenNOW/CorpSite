@@ -37,7 +37,7 @@ node {
         
         snDevOpsStep()
         snDevOpsChange()
-        snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "globex-web.war","version":"3.${env.BUILD_NUMBER}.0","semanticVersion": "3.${env.BUILD_NUMBER}.0","repositoryName": "Repo1", "branchName": "master"}]}""")
+        //snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "globex-web.war","version":"3.${env.BUILD_NUMBER}.0","semanticVersion": "3.${env.BUILD_NUMBER}.0","repositoryName": "Repo1", "branchName": "master"}]}""")
     }
     
 }
@@ -63,7 +63,7 @@ def getCurrentBuildFailedTests(String stageName, String jobUrl, String jobName) 
    jsonObj.put("buildNumber", env.BUILD_NUMBER)
    jsonObj.put("pipelineName", env.JOB_NAME)
    def json = new groovy.json.JsonBuilder(jsonObj)
-   def response = ["curl", "-k", "-X", "POST", "-H", "Content-Type: application/json", "-d", "${json}", "https://devops.integration.user:devops@https://devopsoutsideintesting.service-now.com//api/sn_devops/v1/devops/tool/test?toolId=8587c1f6db538c10c93442c5059619c5&testType=Integration"].execute()
+   def response = ["curl", "-k", "-X", "POST", "-H", "Content-Type: application/json", "-d", "${json}", "https://devops.integration.user:devops@devopsoutsideintesting.service-now.com//api/sn_devops/v1/devops/tool/test?toolId=8587c1f6db538c10c93442c5059619c5&testType=Integration"].execute()
    response.waitFor()
    echo response.err.text
    echo response.text
